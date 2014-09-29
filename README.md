@@ -1,6 +1,12 @@
-Age of CAS III
+Age of CAS III: Return of Mrs. Miller
 ====================
 
-Engine: Unity
+Engine: Unity + (NULL MMO engine)
 
-Rest is to be determined
+Genre: NULL
+
+Features: NULL
+
+Platforms: NULL
+
+Rest: !Determined
