@@ -1,12 +1,12 @@
 Age of CAS III: Return of Mrs. Miller
 ====================
 
-Engine: Unity + (NULL MMO engine)
+Engine: Unity3D + [Insert cool name here]: Node.js server by Peter Fajner 
 
-Genre: NULL
+Genre: MMORPG
 
-Features: NULL
+Features: It's a Divinity clone, with MORE multiplayer
 
-Platforms: NULL
+Platforms: PC, maybe Macintosh
 
 Rest: !Determined
