@@ -15,10 +15,14 @@ Platforms: Windows, perhaps OSX and Linux
 - None yet
 
 ####*In Developement*
-- Movement Turnbased && Realtime
-- Camera Controls
+1. Movement 
+  2. Turnbased
+  3. Realtime
+2. Camera Controls
 
 ####*Planned*
-- Combat
-- Evolution of enemies 
-- Enemies 
+1. Enemies
+2. Evolution of enemies 
+3. Combat
+
+
