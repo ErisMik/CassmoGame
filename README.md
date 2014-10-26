@@ -5,8 +5,17 @@ Engine: Unity3D + [Insert cool name here]: Node.js server by Peter Fajner
 
 Genre: MMORPG
 
-Features: It's a Divinity clone, with MORE multiplayer
+Features: It's a Divinity-Like clone-ish RPG MO
 
-Platforms: PC, maybe Macintosh
+Platforms: Windows, perhaps OSX and Linux
 
-Rest: !Determined
+###**Features:**
+
+####*Implemented*
+- None yet
+
+####*Planned*
+- Movement Turnbased && Realtime
+- Combat
+- Evolution of enemies 
+- Enemies 
