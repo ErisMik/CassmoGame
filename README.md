@@ -14,8 +14,11 @@ Platforms: Windows, perhaps OSX and Linux
 ####*Implemented*
 - None yet
 
-####*Planned*
+####*In Developement*
 - Movement Turnbased && Realtime
+- Camera Controls
+
+####*Planned*
 - Combat
 - Evolution of enemies 
 - Enemies 
