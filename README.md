@@ -28,4 +28,6 @@ Platforms: Windows, perhaps OSX and Linux
 2. Evolution of enemies 
 3. Combat
 
+####**Improvements**
+1. Every physics update, objects check a lot of gravity. If needed, we can set a cutoff distance in the once-per-number-of-seconds calculation. 
 
