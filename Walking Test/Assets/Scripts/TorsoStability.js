@@ -1,6 +1,6 @@
 ﻿#pragma strict
 
-private var floor:GameObject;
+private var upDirection:Vector3;
 var torque:float;
 var wheel:GameObject;
 
@@ -8,13 +8,13 @@ function Start () {
 }
 
 function Update () {
-	floor = wheel.GetComponent(Gravity).floor;
+	upDirection = wheel.GetComponent(Gravity).upDirection;
 }
 
 function FixedUpdate () {
 
 		//bummed from http://wiki.unity3d.com/index.php?title=TorqueLookRotation
-		var targetDelta:Vector3 = floor.transform.position - transform.position;
+		var targetDelta:Vector3 = upDirection;
  
 		//get the angle between transform.forward and target delta
 		var angleDiff:float = Vector3.Angle(-transform.up, targetDelta);

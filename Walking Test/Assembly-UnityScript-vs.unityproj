@@ -51,11 +51,20 @@
      <Compile Include="Assets\Default-Unity\Character Controllers\Sources\Scripts\PlatformInputController.js" />
      <Compile Include="Assets\Default-Unity\Character Controllers\Sources\Scripts\ThirdPersonCamera.js" />
      <Compile Include="Assets\Default-Unity\Character Controllers\Sources\Scripts\ThirdPersonController.js" />
+     <Compile Include="Assets\GravProperties.js" />
      <Compile Include="Assets\Scripts\CameraSwitcher.js" />
      <Compile Include="Assets\Scripts\Gravity.js" />
      <Compile Include="Assets\Scripts\ShipMovement.js" />
+     <Compile Include="Assets\Scripts\SpiderScript.js" />
      <Compile Include="Assets\Scripts\TorsoStability.js" />
      <Compile Include="Assets\Scripts\WheelRotation.js" />
+ <Reference Include="Assembly-UnityScript-firstpass">
+ <HintPath>C:/Users/Peter/Google Drive/CAS Project Game/Game-for-CAS-Project/Walking Test/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
+      <Project>{49BA9A2B-FD02-E820-E93D-7FC9022C856A}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
