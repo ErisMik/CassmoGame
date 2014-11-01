@@ -52,7 +52,9 @@
      <Compile Include="Assets\Default-Unity\Character Controllers\Sources\Scripts\ThirdPersonCamera.js" />
      <Compile Include="Assets\Default-Unity\Character Controllers\Sources\Scripts\ThirdPersonController.js" />
      <Compile Include="Assets\Scripts\CameraSwitcher.js" />
+     <Compile Include="Assets\Scripts\Gravity.js" />
      <Compile Include="Assets\Scripts\ShipMovement.js" />
+     <Compile Include="Assets\Scripts\TorsoStability.js" />
      <Compile Include="Assets\Scripts\WheelRotation.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
