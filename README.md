@@ -19,6 +19,9 @@ Platforms: Windows, perhaps OSX and Linux
   2. Turnbased
   3. Realtime
 2. Camera Controls
+3. Loot Drops
+4. Inventory
+5. Hats?
 
 ####*Planned*
 1. Enemies
