@@ -52,8 +52,10 @@
      <Compile Include="Assets\Default-Unity\Character Controllers\Sources\Scripts\ThirdPersonCamera.js" />
      <Compile Include="Assets\Default-Unity\Character Controllers\Sources\Scripts\ThirdPersonController.js" />
      <Compile Include="Assets\GravProperties.js" />
+     <Compile Include="Assets\OrbitCreation.js" />
      <Compile Include="Assets\Scripts\CameraSwitcher.js" />
      <Compile Include="Assets\Scripts\Gravity.js" />
+     <Compile Include="Assets\Scripts\GravityNaturalOnly.js" />
      <Compile Include="Assets\Scripts\ShipMovement.js" />
      <Compile Include="Assets\Scripts\SpiderScript.js" />
      <Compile Include="Assets\Scripts\SpiderWheel.js" />

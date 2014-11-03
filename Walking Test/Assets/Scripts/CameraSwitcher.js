@@ -5,6 +5,7 @@ var BillyHead:GameObject;
 var Ship:GameObject;
 var Camera:GameObject;
 var shipActivated:boolean;
+var BillyWheelScript:SpiderWheel;
 
 function Start () {
 	shipActivated = false;
@@ -14,7 +15,6 @@ function Update () {
 	if (Input.GetKeyDown("space")) {
 		shipActivated = !shipActivated;
 
-		var BillyWheelScript = BillyWheel.GetComponent(WheelRotation);
 		var ShipScript = Ship.GetComponent(ShipMovement);
 
 		if (!shipActivated) {

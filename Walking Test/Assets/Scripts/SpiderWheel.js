@@ -7,8 +7,8 @@ var torso:GameObject;
 var jumpForce:float;
 var activated:boolean;
 private var count = 0;
-private var leftWheels;
-private var rightWheels;
+private var leftWheels:Array;
+private var rightWheels:Array;
 
 function Start () {
 	wheels = wheelsContainer.FindGameObjectsWithTag("SpiderWheel");
@@ -52,7 +52,6 @@ function FixedUpdate () {
 		for (var i = 0; i < 3; i++) {
 			//var wheel = wheels[i] as GameObject;
 			//wheel.rigidbody.AddRelativeTorque(Vector3(roll * torque * Time.deltaTime, yaw * torque * Time.deltaTime, pitch * torque * Time.deltaTime));
-
 			((leftWheels as Array)[i] as GameObject).rigidbody.AddRelativeTorque(Vector3(-pitch * torque * Time.deltaTime, 0, 0));
 			((rightWheels as Array)[i] as GameObject).rigidbody.AddRelativeTorque(Vector3(-pitch * torque * Time.deltaTime, 0, 0));
 			((leftWheels as Array)[i] as GameObject).rigidbody.AddRelativeTorque(Vector3(-yaw * torque * Time.deltaTime, 0, 0));
