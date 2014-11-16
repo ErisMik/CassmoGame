@@ -8,6 +8,8 @@ This is for moons and other celestial objects that want to be affected by gravit
 change is that their mass is calculated, not set manually.
 */
 
+/*
+
 var forceAmount:float; //positive, ideally 1, used for ArtGrav calcs
 var mass:float; // this will be set by the script, don't modify
 var gravityConstant:float; // recommended 1e-09?
@@ -99,3 +101,5 @@ function FixedUpdate () {
 	upDirection = tempUpDirection / numOfVectors;
 
 }
+
+*/

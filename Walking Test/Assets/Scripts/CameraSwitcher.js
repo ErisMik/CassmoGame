@@ -20,7 +20,8 @@ function Update () {
 		if (!shipActivated) {
 			Camera.transform.parent = BillyHead.transform;
 			Camera.transform.localPosition = Vector3(0, 5, -15);
-			Camera.transform.localRotation = Quaternion.Euler(15, 0, 0);
+			var cubeLook:Vector3 = BillyHead.transform.TransformDirection(Vector3.forward);
+			Camera.transform.localRotation = Quaternion.Euler(cubeLook.x + 15, cubeLook.y, cubeLook.z);
 			Camera.GetComponent(MouseOrbit).target = BillyHead.transform;
 			ShipScript.activated = false;
 			BillyWheelScript.activated = true;

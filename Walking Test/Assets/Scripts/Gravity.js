@@ -5,6 +5,8 @@ downwards.
 Currently, planet is default.
 */
 
+/*
+
 var forceAmount:float; //positive, ideally 1
 var mass:float; // used in natural grav calculations, use 1
 var gravityConstant:float; // recommended 0.001?
@@ -92,3 +94,5 @@ function FixedUpdate () {
 	upDirection = tempUpDirection / numOfVectors;
 
 }
+
+*/

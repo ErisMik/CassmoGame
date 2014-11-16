@@ -47,6 +47,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Default-Unity\Character Controllers\Sources\Scripts\MouseLook.cs" />
+     <Compile Include="Assets\Scripts\HumaniteMovement.cs" />
+     <Compile Include="Assets\Scripts\ObjectProperties.cs" />
+     <Compile Include="Assets\Scripts\SetOrbit.cs" />
+     <Compile Include="Assets\Scripts\UniversalGravity.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">

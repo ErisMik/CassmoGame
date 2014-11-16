@@ -1,5 +1,7 @@
 ﻿#pragma strict
 
+/*
+
 private var upDirection:Vector3;
 var torque:float;
 var wheel:GameObject;
@@ -26,3 +28,5 @@ function FixedUpdate () {
 		// apply torque along that axis according to the magnitude of the angle.
 		rigidbody.AddTorque(cross * angleDiff * torque);
 }
+
+*/
