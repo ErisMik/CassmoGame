@@ -13,12 +13,12 @@ Platforms: Windows, perhaps OSX and Linux
 
 ####*Implemented*
 - Universal gravity
--   Every rigidbody is attracted to every other rigidbody
--   Mass can be set manually except for Celestial Bodies, where it is calculated using the spheroid volume formula and the density setting
--   Artificial gravity sources implemented (insufficiently tested)
--   Universal drag system, drag increases with inverse of distance from gravity source, does not affect Celestial Bodies.
--     TODO: Hard mode, drag system affects Celestial Bodies, you get to stationkeep your moons.
-
+  - Every rigidbody is attracted to every other rigidbody
+  - Mass can be set manually except for Celestial Bodies, where it is calculated using the spheroid volume formula and the density setting
+  - Artificial gravity sources implemented (insufficiently tested)
+  - Universal drag system, drag increases with inverse of distance from gravity source, does not affect Celestial Bodies.
+  - TODO: Hard mode, drag system affects Celestial Bodies, you get to stationkeep your moons.
+  
 ####*In Developement*
 1. Movement 
   2. Turnbased
