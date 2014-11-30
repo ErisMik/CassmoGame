@@ -20,10 +20,18 @@ Platforms: Windows, perhaps OSX and Linux
   - TODO: Hard mode, drag system affects Celestial Bodies, you get to stationkeep your moons.
   
 ####*In Developement*
-1. Movement 
+1. Movement
+  1. works *adequately*
+  2. torso rotation towards the normal of the total gravity vector implemented
+    1. may be changed to the normal of the strongest gravity vector
 2. Camera Controls
+  1. rotation implemented, but is buggy
 3. Instancing
+  1. most likely will involve separate planet instance and the universe instance, separated by opaque cloud layers
 4. Physics of the Universe (Partially Complete)
+  1. gravity works perfectly
+  2. drag is applied to all objects except celestial bodies based on the inverse square distance from gravity sources
+    1. results in a KSP-like "athmospheric soup"
 
 ####*Planned*
 1. Enemies
