@@ -5,7 +5,8 @@ using System.Collections.Generic;
 public class UniversalGravity : MonoBehaviour {
 
 	public double G; // gravity coefficient
-	public double R; // drag coefficient
+	public float R; // drag coefficient
+	public float A; // angular drag coefficient
 	public float updateInterval;
 
 	//private List<GameObject> rigidbodies = new List<GameObject>();
@@ -68,7 +69,7 @@ public class UniversalGravity : MonoBehaviour {
 					///body.rigidbody.AddForce(force);
 					totalGravity += force;
 
-					Vector3 drag = (float)(R * sourceMass / System.Math.Pow(distance, 2)) * direction;
+					Vector3 drag = (float)(sourceMass / System.Math.Pow(distance, 2)) * direction;
 					totalDrag += drag;
 
 					///numOfVectors += 1;
@@ -86,7 +87,7 @@ public class UniversalGravity : MonoBehaviour {
 					///body.rigidbody.AddForce(force);
 					totalGravity += force;
 
-					Vector3 drag = (float)(R * sourceProperties.virtualMass) * direction;
+					Vector3 drag = (float)(sourceProperties.virtualMass) * direction;
 					totalDrag += drag;
 
 					///numOfVectors += 1;
@@ -97,8 +98,8 @@ public class UniversalGravity : MonoBehaviour {
 			body.rigidbody.AddForce(totalGravity);
 			bodyProperties.gravity = totalGravity;
 			if (body.tag != "CelestialObject") {
-				body.rigidbody.drag = totalDrag.magnitude;
-				body.rigidbody.angularDrag = totalDrag.magnitude;
+				body.rigidbody.drag = R * totalDrag.magnitude;
+				body.rigidbody.angularDrag = A * totalDrag.magnitude;
 			}
 
 			

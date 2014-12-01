@@ -6,6 +6,7 @@ public class SetOrbit : MonoBehaviour {
 	public GameObject parent;
 	public Vector3 direction; // careful with directions! mind placement!
 	public double strength; // needed because G is different
+	public Vector3 spin;
 
 	// Use this for initialization
 	IEnumerator Start () {
@@ -16,6 +17,7 @@ public class SetOrbit : MonoBehaviour {
 		float distance = (parent.transform.position - transform.position).magnitude;
 		Vector3 velocity = (float)System.Math.Sqrt((rigidbody.mass + parent.rigidbody.mass) * G * strength / distance) * direction.normalized;
 		rigidbody.velocity = velocity;
+		rigidbody.angularVelocity = spin;
 	}
 
 }
