@@ -28,6 +28,7 @@ Platforms: Windows, perhaps OSX and Linux
   1. rotation implemented, but is buggy
 3. Instancing
   1. most likely will involve separate planet instance and the universe instance, separated by opaque cloud layers
+    1. Will Begin to preload scene as you approach planet, so when you hit cloud layer load times are reduced
 4. Physics of the Universe (Partially Complete)
   1. gravity works perfectly
   2. drag is applied to all objects except celestial bodies based on the inverse square distance from gravity sources
