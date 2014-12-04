@@ -49,5 +49,7 @@ Platforms: Windows, perhaps OSX and Linux
 
 2. Comparing the sqrmagnitude of vectors and distances gives the same values as comparing their magnitude minus the expensive sqrt calculation.
 
+3. A lot of the textures have extra render effects that are not needed/can be done in better ways, fixing these could improve performance
+
 ####**Suggestions or Ideas?**
 Create an issue with the tag "Suggestion" and we will may implement it!
