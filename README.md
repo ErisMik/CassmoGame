@@ -27,7 +27,7 @@ Platforms: Windows, perhaps OSX and Linux
 2. Camera Controls
   1. rotation implemented, but is buggy
 3. Instancing
-  1. most likely will involve separate planet instance and the universe instance, separated by opaque cloud layers
+  1. most likely will involve separate planet instance and the universe instance, separated by ~~opaque~~ translucent (to get pretty surface textures bro) cloud layers
     1. Will Begin to preload scene as you approach planet, so when you hit cloud layer load times are reduced
 4. Physics of the Universe (Partially Complete)
   1. gravity works perfectly
