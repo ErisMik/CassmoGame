@@ -5,7 +5,7 @@ var BillyHead:GameObject;
 var Ship:GameObject;
 var Camera:GameObject;
 var shipActivated:boolean;
-var BillyWheelScript:SpiderWheel;
+var BillyWheelScript:WheelRotation;
 
 function Start () {
 	shipActivated = false;

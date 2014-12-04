@@ -1,8 +1,9 @@
 ﻿#pragma strict
 
-/*
 
+/*
 private var upDirection:Vector3;
+private var properties:ObjectProperties;
 var torque:float;
 var wheel:GameObject;
 
@@ -10,10 +11,15 @@ function Start () {
 }
 
 function Update () {
-	upDirection = wheel.GetComponent(Gravity).upDirection;
+	//properties = GetComponent(ObjectProperties);
+	upDirection = GetComponent(ObjectProperties).gravity;
+
+	//upDirection = wheel.GetComponent(Gravity).upDirection;
 }
 
 function FixedUpdate () {
+
+		//upDirection = properties.gravity;
 
 		//bummed from http://wiki.unity3d.com/index.php?title=TorqueLookRotation
 		var targetDelta:Vector3 = upDirection;
