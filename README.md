@@ -35,7 +35,7 @@ Platforms: Windows, perhaps OSX and Linux
   1. gravity works perfectly
   2. drag is applied to all objects except celestial bodies based on the inverse square distance from gravity sources
     1. results in a KSP-like "athmospheric soup"
-5. Title Menu
+5. Title and Menu scene (1st iteration)
 
 ####*Planned*
 1. Enemies
