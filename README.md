@@ -1,7 +1,7 @@
 Age of CAS IV: Cassmo Strikes Back
 ====================
 
-Find us at our website: [Not yet Completed]
+Find us at our website: [Not yet Completed](https://github.com/ErisMik/Cassmo_Website_and_Wiki)
 
 Engine: Unity3D + [Insert cool name here]: Node.js server by Peter Fajner 
 
