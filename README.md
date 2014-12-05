@@ -35,6 +35,7 @@ Platforms: Windows, perhaps OSX and Linux
   1. gravity works perfectly
   2. drag is applied to all objects except celestial bodies based on the inverse square distance from gravity sources
     1. results in a KSP-like "athmospheric soup"
+5. Title Menu
 
 ####*Planned*
 1. Enemies
@@ -45,6 +46,7 @@ Platforms: Windows, perhaps OSX and Linux
 6. Loot Drops
 7. Inventory
 8. Hats?
+9. User Interface / HUD
 
 ####**Improvements**
 1. Every physics update, objects check a lot of gravity. If needed, we can set a cutoff distance in the once-per-number-of-seconds calculation. 
