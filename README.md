@@ -5,7 +5,7 @@ Engine: Unity3D + [Insert cool name here]: Node.js server by Peter Fajner
 
 Genre: MMORPGRTS Command Simulation
 
-Features: It's a Divinity-Like clone-ish RPG MO in space?
+Features: It's a Divinity-Like clone-ish Multiplayer Online Shooter Strategy Game in space?
 
 Platforms: Windows, perhaps OSX and Linux
 
