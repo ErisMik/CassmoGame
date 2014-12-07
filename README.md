@@ -33,6 +33,7 @@ In short, it's not really a game yet; all of the work up to this point in time i
   1. works *adequately*
   2. torso rotation towards the normal of the total gravity vector implemented
     1. may be changed to the normal of the strongest gravity vector
+2. Ships and Ship Movement
 2. Camera Controls
   1. rotation implemented, but is buggy
 3. Instancing
@@ -40,6 +41,7 @@ In short, it's not really a game yet; all of the work up to this point in time i
     1. Will Begin to preload scene as you approach planet, so when you hit cloud layer load times are reduced
 4. Physics of the Universe (Partially Complete)
   1. gravity works perfectly
+  2. Planets don't spin yet
   2. drag is applied to all objects except celestial bodies based on the inverse square distance from gravity sources
     1. results in a KSP-like "athmospheric soup"
 5. Title and Menu scene (1st iteration)
