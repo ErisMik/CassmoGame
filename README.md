@@ -13,6 +13,15 @@ Age of CAS IV: *Cassmo Strikes Back*
 
 Created and Worked on by [Eric M](https://github.com/ErisMik), [Peter F](https://github.com/PeterFajner) and [Troy H](https://github.com/TroyNH)
 
+###Table of Contents
+- [Current State of the Game](#State-of-the-Game)
+- [Features](#Features)
+  - [Implemented](#Implemented)
+  - [In Progress](#In-Developement)
+  - [Planned](#Planned)
+- [Improvments](#Improvements)
+- [Other Stuff](#Suggestions-or-Ideas?)
+
 ###**State of the Game**
 *(Updated December 4, 2014)*
 
