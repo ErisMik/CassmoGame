@@ -81,5 +81,8 @@ In short, it's not really a game yet; all of the work up to this point in time i
 
 3. A lot of the textures have extra render effects that are not needed/can be done in better ways, fixing these could improve performance
 
+#### License
+This game is under the GPLv3 License
+
 #### Suggestions or Ideas?
 Create an issue with the tag "Suggestion" and we will/may implement it!
