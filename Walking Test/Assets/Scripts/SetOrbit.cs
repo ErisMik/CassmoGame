@@ -35,9 +35,9 @@ public class SetOrbit : MonoBehaviour {
 		double G = properties.G;
 		yield return new WaitForSeconds(0.01f);
 		float distance = (parent.transform.position - transform.position).magnitude;
-		Vector3 velocity = (float)System.Math.Sqrt((rigidbody.mass + parent.rigidbody.mass) * G * strength / distance) * direction.normalized;
-		rigidbody.velocity = velocity;
-		rigidbody.angularVelocity = spin;
+		Vector3 velocity = (float)System.Math.Sqrt((GetComponent<Rigidbody>().mass + parent.GetComponent<Rigidbody>().mass) * G * strength / distance) * direction.normalized;
+		GetComponent<Rigidbody>().velocity = velocity;
+		GetComponent<Rigidbody>().angularVelocity = spin;
 	}
 
 }

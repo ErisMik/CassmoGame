@@ -1,14 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Default-Unity\Character Controllers\Sources\Scripts\CharacterMotor.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Planet Generation\DeformIco.cs">
     <Files>
-<<<<<<< HEAD
-      <File FileName="Temp\ParsedCombinations-Illumin-Diffuse.shader" Line="1" Column="1" />
-=======
-      <File FileName="Assets\Scripts\UniversalGravity.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ObjectProperties.cs" Line="1" Column="1" />
->>>>>>> origin/Instancing
-      <File FileName="Assets\Default-Unity\Character Controllers\Sources\Scripts\CharacterMotor.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Planet Generation\DeformIco.cs" Line="6" Column="9" />
+      <File FileName="Assets\Scripts\Planet Generation\DeformController.cs" Line="13" Column="41" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

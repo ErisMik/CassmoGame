@@ -58,8 +58,8 @@ function FixedUpdate () {
 	var oddLegs = [legs[0] as GameObject, legs[2] as GameObject, legs[4] as GameObject];
 	var evenLegs = [legs[1] as GameObject, legs[3] as GameObject, legs[5] as GameObject];
 	for (var i = 0; i < 3; i++) {
-		oddLegs[i].rigidbody.AddRelativeTorque(Vector3(roll * raiseTorque * Time.deltaTime, yaw * raiseTorque * Time.deltaTime, pitch * raiseTorque * Time.deltaTime));
-		evenLegs[i].rigidbody.AddRelativeTorque(Vector3(croll * raiseTorque * Time.deltaTime, cyaw * raiseTorque * Time.deltaTime, cpitch * raiseTorque * Time.deltaTime));
+		oddLegs[i].GetComponent.<Rigidbody>().AddRelativeTorque(Vector3(roll * raiseTorque * Time.deltaTime, yaw * raiseTorque * Time.deltaTime, pitch * raiseTorque * Time.deltaTime));
+		evenLegs[i].GetComponent.<Rigidbody>().AddRelativeTorque(Vector3(croll * raiseTorque * Time.deltaTime, cyaw * raiseTorque * Time.deltaTime, cpitch * raiseTorque * Time.deltaTime));
 	}
 
 }

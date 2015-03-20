@@ -72,19 +72,19 @@ function FixedUpdate () {
 		for (var i = 0; i < 3; i++) {
 			//var wheel = wheels[i] as GameObject;
 			//wheel.rigidbody.AddRelativeTorque(Vector3(roll * torque * Time.deltaTime, yaw * torque * Time.deltaTime, pitch * torque * Time.deltaTime));
-			((leftWheels as Array)[i] as GameObject).rigidbody.AddRelativeTorque(Vector3(-pitch * torque * Time.deltaTime, 0, 0));
-			((rightWheels as Array)[i] as GameObject).rigidbody.AddRelativeTorque(Vector3(-pitch * torque * Time.deltaTime, 0, 0));
-			((leftWheels as Array)[i] as GameObject).rigidbody.AddRelativeTorque(Vector3(-yaw * torque * Time.deltaTime, 0, 0));
-			((rightWheels as Array)[i] as GameObject).rigidbody.AddRelativeTorque(Vector3(yaw * torque * Time.deltaTime, 0, 0));
+			((leftWheels as Array)[i] as GameObject).GetComponent.<Rigidbody>().AddRelativeTorque(Vector3(-pitch * torque * Time.deltaTime, 0, 0));
+			((rightWheels as Array)[i] as GameObject).GetComponent.<Rigidbody>().AddRelativeTorque(Vector3(-pitch * torque * Time.deltaTime, 0, 0));
+			((leftWheels as Array)[i] as GameObject).GetComponent.<Rigidbody>().AddRelativeTorque(Vector3(-yaw * torque * Time.deltaTime, 0, 0));
+			((rightWheels as Array)[i] as GameObject).GetComponent.<Rigidbody>().AddRelativeTorque(Vector3(yaw * torque * Time.deltaTime, 0, 0));
 			if (yaw == 0 && pitch == 0 && roll == 0) {
-				((leftWheels as Array)[i] as GameObject).rigidbody.angularVelocity = Vector3.zero;
-				((rightWheels as Array)[i] as GameObject).rigidbody.angularVelocity = Vector3.zero;
+				((leftWheels as Array)[i] as GameObject).GetComponent.<Rigidbody>().angularVelocity = Vector3.zero;
+				((rightWheels as Array)[i] as GameObject).GetComponent.<Rigidbody>().angularVelocity = Vector3.zero;
 			}
 		}
 
 		// jump
 		if (jump != 0 && Physics.Raycast(torso.transform.position, -torso.transform.up, 1)) {
-			torso.rigidbody.AddRelativeForce(0, jumpForce * jump, 0);
+			torso.GetComponent.<Rigidbody>().AddRelativeForce(0, jumpForce * jump, 0);
 		}
 	}
 

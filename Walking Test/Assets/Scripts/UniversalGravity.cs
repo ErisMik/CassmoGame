@@ -46,8 +46,8 @@ public class UniversalGravity : MonoBehaviour {
 			if (source.tag == "CelestialObject") {
 				ObjectProperties objprop = source.GetComponent(typeof(ObjectProperties)) as ObjectProperties;
 				double density = objprop.density;
-				double mass = (3.1415926/6f) * density * source.collider.bounds.size.x * source.collider.bounds.size.z * source.collider.bounds.size.y;
-				source.rigidbody.mass = (float)mass;
+				double mass = (3.1415926/6f) * density * source.GetComponent<Collider>().bounds.size.x * source.GetComponent<Collider>().bounds.size.z * source.GetComponent<Collider>().bounds.size.y;
+				source.GetComponent<Rigidbody>().mass = (float)mass;
 			}
 		}
 	}
@@ -62,7 +62,7 @@ public class UniversalGravity : MonoBehaviour {
 		List<GameObject> tempRigidbodies = new List<GameObject>();
 		GameObject[] allGameObjects = (GameObject[]) GameObject.FindObjectsOfType(typeof(GameObject));
 		foreach (GameObject source in allGameObjects) {
-			if  (source.rigidbody != null && source.activeInHierarchy)
+			if  (source.GetComponent<Rigidbody>() != null && source.activeInHierarchy)
 				tempRigidbodies.Add(source);
 		}
 		rigidbodies = tempRigidbodies.ToArray();
@@ -71,7 +71,7 @@ public class UniversalGravity : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		foreach (GameObject body in rigidbodies) {
-			float bodyMass = body.rigidbody.mass;
+			float bodyMass = body.GetComponent<Rigidbody>().mass;
 			ObjectProperties bodyProperties = body.GetComponent(typeof(ObjectProperties)) as ObjectProperties;
 			// Torso rotation directions for humanites
 			///Vector3 upDirection = Vector3.zero;
@@ -82,7 +82,7 @@ public class UniversalGravity : MonoBehaviour {
 			Vector3 totalGravity = Vector3.zero;
 			foreach(GameObject source in rigidbodies) {
 				if (source != body) {
-					float sourceMass = source.rigidbody.mass;
+					float sourceMass = source.GetComponent<Rigidbody>().mass;
 					Vector3 direction = (source.transform.position - body.transform.position).normalized;
 					double distance = (source.transform.position - body.transform.position).magnitude;
 					Vector3 force = (float)(G * bodyMass * sourceMass / System.Math.Pow(distance, 2)) * direction * Time.smoothDeltaTime;
@@ -115,11 +115,11 @@ public class UniversalGravity : MonoBehaviour {
 				}
 			}
 			///upDirection = upDirection / numOfVectors;
-			body.rigidbody.AddForce(totalGravity);
+			body.GetComponent<Rigidbody>().AddForce(totalGravity);
 			bodyProperties.gravity = totalGravity;
 			if (body.tag != "CelestialObject") {
-				body.rigidbody.drag = R * totalDrag.magnitude;
-				body.rigidbody.angularDrag = A * totalDrag.magnitude;
+				body.GetComponent<Rigidbody>().drag = R * totalDrag.magnitude;
+				body.GetComponent<Rigidbody>().angularDrag = A * totalDrag.magnitude;
 			}
 
 			

@@ -47,6 +47,6 @@ public class TorsoStability : MonoBehaviour {
 		Vector3 cross = Vector3.Cross(-transform.up, targetDelta);
  
 		// apply torque along that axis according to the magnitude of the angle.
-		rigidbody.AddTorque(cross * angleDiff * torque);
+		GetComponent<Rigidbody>().AddTorque(cross * angleDiff * torque);
 	}
 }

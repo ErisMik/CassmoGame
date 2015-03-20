@@ -39,10 +39,10 @@ function FixedUpdate () {
 	var roll = Input.GetAxis("Roll");
 
     if (activated) {
-    	rigidbody.AddRelativeForce(forward * speed * Time.deltaTime, 0.0, 0.0);
-    	rigidbody.AddRelativeTorque(Vector3(roll * rollSpeed * Time.deltaTime, yaw * yawSpeed * Time.deltaTime, pitch * pitchSpeed * Time.deltaTime));
+    	GetComponent.<Rigidbody>().AddRelativeForce(forward * speed * Time.deltaTime, 0.0, 0.0);
+    	GetComponent.<Rigidbody>().AddRelativeTorque(Vector3(roll * rollSpeed * Time.deltaTime, yaw * yawSpeed * Time.deltaTime, pitch * pitchSpeed * Time.deltaTime));
     }
 
-    if (yaw == 0 && pitch == 0 && roll == 0) rigidbody.angularVelocity *= -spinDampening; //rigidbody.AddTorque(rigidbody.angularVelocity * spinDampening * Time.deltaTime);
-    if (forward == 0) rigidbody.velocity *= -moveDampening; //rigidbody.AddForce(rigidbody.velocity * moveDampening * Time.deltaTime);
+    if (yaw == 0 && pitch == 0 && roll == 0) GetComponent.<Rigidbody>().angularVelocity *= -spinDampening; //rigidbody.AddTorque(rigidbody.angularVelocity * spinDampening * Time.deltaTime);
+    if (forward == 0) GetComponent.<Rigidbody>().velocity *= -moveDampening; //rigidbody.AddForce(rigidbody.velocity * moveDampening * Time.deltaTime);
 }

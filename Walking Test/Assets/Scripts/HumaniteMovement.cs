@@ -48,7 +48,7 @@ public class HumaniteMovement : MonoBehaviour {
 				//rigidbody.angularDrag = 0;
 				timeSinceMove = 0.99999f;
 			}
-			rigidbody.velocity += rigidbody.transform.forward * speed * moveHorizontal;
+			GetComponent<Rigidbody>().velocity += GetComponent<Rigidbody>().transform.forward * speed * moveHorizontal;
 			//transform.Rotate(Vector3.up * rotateSpeed * moveVertical * Time.smoothDeltaTime, Space.Self);
 			transform.up = new Vector3(-upDirection.x, -upDirection.y / 2 + moveVertical, -upDirection.z);
 			Debug.Log(transform.up + " " + -upDirection);
@@ -63,7 +63,7 @@ public class HumaniteMovement : MonoBehaviour {
 			Vector3 cross = Vector3.Cross(-transform.up, upDirection);
 			//Vector3 doubleCross = Vector3.Cross(-transform.up, -cross);
 			Debug.Log(timeSinceMove);
-			rigidbody.AddTorque(cross * Mathf.Sin(angleDiff * Mathf.Deg2Rad) * torque * timeSinceMove * Time.smoothDeltaTime);
+			GetComponent<Rigidbody>().AddTorque(cross * Mathf.Sin(angleDiff * Mathf.Deg2Rad) * torque * timeSinceMove * Time.smoothDeltaTime);
 		}
 	}
 
@@ -82,7 +82,7 @@ public class HumaniteMovement : MonoBehaviour {
 	void Hover () {
 		bool onGround = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), 2);
 		if (onGround) {
-			rigidbody.AddForce(1.0001f * -properties.gravity);
+			GetComponent<Rigidbody>().AddForce(1.0001f * -properties.gravity);
 		}
 	}
 
