@@ -57,6 +57,12 @@ static class IcoGenerator
 	
 	public static void Create (GameObject obj, int recursionLevel)
 	{
+		MeshFilter tempFilter = obj.GetComponent<MeshFilter>();
+		if (tempFilter != null) {
+			UnityEngine.Object.Destroy (obj.GetComponent<MeshFilter>());
+			Debug.Log ("destroyed");
+		}
+
 
 		MeshFilter filter = obj.AddComponent< MeshFilter >();
 		Mesh mesh = filter.mesh;

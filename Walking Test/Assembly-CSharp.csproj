@@ -52,12 +52,14 @@
      <Compile Include="Assets\Scripts\Planet Generation\DeformController.cs" />
      <Compile Include="Assets\Scripts\Planet Generation\DeformIco.cs" />
      <Compile Include="Assets\Scripts\Planet Generation\IcoGenerator.cs" />
+     <Compile Include="Assets\Scripts\Planet Generation\PlanetDecorator.cs" />
      <Compile Include="Assets\Scripts\Planet Generation\PlanetGenerator-UVSphere.cs" />
      <Compile Include="Assets\Scripts\SetOrbit.cs" />
      <Compile Include="Assets\Scripts\TorsoStability.cs" />
      <Compile Include="Assets\Scripts\UniversalGravity.cs" />
      <None Include="Assets\_AssestsHome.txt" />
      <None Include="Assets\Scenes\_ScenesHome.txt" />
+     <None Include="Assets\Shaders\ColourableVertices.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Windows/Unity3D/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -9,6 +9,7 @@ public class DeformController : MonoBehaviour {
 	public int recursionLevel;
 	public bool deform;
 	public float roughness;
+	public bool decorate;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +20,9 @@ public class DeformController : MonoBehaviour {
 		if(deform) {
 			//DeformIco deform = GameObject.FindWithTag("Global").GetComponent<DeformIco>();
 			DeformIco.deform(gameObject, roughness);
+		}
+		if (decorate) {
+			PlanetDecorator.colour(gameObject);
 		}
 	
 	}

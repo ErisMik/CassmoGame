@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\WheelRotation.js" />
      <None Include="Assets\_AssestsHome.txt" />
      <None Include="Assets\Scenes\_ScenesHome.txt" />
+     <None Include="Assets\Shaders\ColourableVertices.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>C:/Users/Peter/Google Drive/CAS Project Game/CassmoGame/Walking Test/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
