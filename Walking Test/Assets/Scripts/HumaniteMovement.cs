@@ -70,7 +70,7 @@ public class HumaniteMovement : MonoBehaviour {
 	void TorsoRotateKinematic () {
 		Vector3 upDirection = properties.gravity;
 		//float angleDiff = Vector3.Angle(-transform.up, upDirection);
-		Quaternion rotationDir = Quaternion.LookRotation(upDirection);
+		//Quaternion rotationDir = Quaternion.LookRotation(upDirection);
 		//Vector3 rotationAngle = new Vector3(rotationDir.x, 0, rotationDir.z);
 		//if (angleDiff > 0.1) {
 			//transform.Rotate(Vector3.RotateTowards(-transform.up, upDirection, Mathf.Deg2Rad * angleDiff, 0));

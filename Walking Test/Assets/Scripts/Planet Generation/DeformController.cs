@@ -9,7 +9,11 @@ public class DeformController : MonoBehaviour {
 	public int recursionLevel;
 	public bool deform;
 	public float roughness;
-	public bool decorate;
+	public bool mountains;
+	public int numMountains;
+	public float mountainMaxHeight; // fraction of radius
+	public float mountainSteepness; // cos of angle
+	public bool colour;
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +25,10 @@ public class DeformController : MonoBehaviour {
 			//DeformIco deform = GameObject.FindWithTag("Global").GetComponent<DeformIco>();
 			DeformIco.deform(gameObject, roughness);
 		}
-		if (decorate) {
+		if (mountains) {
+				DeformIco.mountains (gameObject, numMountains, mountainMaxHeight, mountainSteepness);
+		}
+		if (colour) {
 			PlanetDecorator.colour(gameObject);
 		}
 	

@@ -59,8 +59,7 @@ static class IcoGenerator
 	{
 		MeshFilter tempFilter = obj.GetComponent<MeshFilter>();
 		if (tempFilter != null) {
-			UnityEngine.Object.Destroy (obj.GetComponent<MeshFilter>());
-			Debug.Log ("destroyed");
+			UnityEngine.Object.DestroyImmediate (obj.GetComponent<MeshFilter>());
 		}
 
 

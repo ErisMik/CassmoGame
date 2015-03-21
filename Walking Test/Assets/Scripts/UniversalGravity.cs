@@ -30,8 +30,8 @@ public class UniversalGravity : MonoBehaviour {
 	public float updateInterval;
 
 	//private List<GameObject> rigidbodies = new List<GameObject>();
-	private GameObject[] rigidbodies;
-	private GameObject[] ASources;
+	private GameObject[] rigidbodies = new GameObject[0];
+	private GameObject[] ASources = new GameObject[0];
 
 	// Use this for initialization
 	void Start () {
