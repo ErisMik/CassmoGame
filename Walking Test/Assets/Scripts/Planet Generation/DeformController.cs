@@ -15,6 +15,7 @@ public class DeformController : MonoBehaviour {
 	public float mountainSteepness; // cos of angle
 	public bool colour;
 	public bool collision;
+	public Material material;
 
 	// Use this for initialization
 	void Start () {
@@ -33,6 +34,11 @@ public class DeformController : MonoBehaviour {
 		if (colour) {
 			PlanetDecorator.colour(gameObject);
 		}
+		if (collision) {
+			IcoCollision icoCollision = new IcoCollision (gameObject);
+			icoCollision.createPlanes (material);
+		}
+		
 	
 	}
 }
