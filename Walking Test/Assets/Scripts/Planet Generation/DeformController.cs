@@ -14,19 +14,21 @@ public class DeformController : MonoBehaviour {
 	public float mountainMaxHeight; // fraction of radius
 	public float mountainSteepness; // cos of angle
 	public bool colour;
+	public bool collision;
 
 	// Use this for initialization
 	void Start () {
 
+
 		if (create) {
 			IcoGenerator.Create(gameObject, recursionLevel);
 		}
-		if(deform) {
+		if (deform) {
 			//DeformIco deform = GameObject.FindWithTag("Global").GetComponent<DeformIco>();
 			DeformIco.deform(gameObject, roughness);
 		}
 		if (mountains) {
-				DeformIco.mountains (gameObject, numMountains, mountainMaxHeight, mountainSteepness);
+				DeformIco.mountains (gameObject, numMountains, mountainMaxHeight, mountainSteepness, recursionLevel*2);
 		}
 		if (colour) {
 			PlanetDecorator.colour(gameObject);

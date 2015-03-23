@@ -27,11 +27,21 @@ public static class PlanetDecorator {
 			float normHeight = (height - heightRange[0])/heightRange[2];
 			//colours[i] = Color.Lerp(new Color(0F, 0.3F, 0F, 0F), Color.white, normalizedHeight);
 
+
+			/* Colours:
+			 * ferrero:
+			 * <0.9 new Color(0F, 0.5F, 0F, 0F);
+			 * else new Color(0.7F, 0.7F, 0.6F, 0F);
+			 * 
+			 * coconut ferrero:
+			 * <0.5 new Color(255F/255F, 170F/255F, 120F/255F, 0F);
+			 * else new Color(0.9F, 0.9F, 0.8F, 0F);
+			 */
+
 			//if(normHeight < 0.2) colours[i] = new Color(0.3F, 0.3F, 0.9F, 0F);
-			if (normHeight < 0.9) colours[i] = new Color(0F, 0.5F, 0F, 0F);
+			if (normHeight < 0.8) colours[i] = new Color(0F, 0.5F, 0F, 0F);
 			//else if (normHeight < 0.9) colours[i] = new Color(0.4F, 0.4F, 0.4F, 0F);
 			else colours[i] = Color.white;
-			//if(i%5 == 0) Debug.Log (normalizedHeight);
 		}
 		mesh.colors = colours;
 	}
