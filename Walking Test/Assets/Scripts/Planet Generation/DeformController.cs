@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 // use this to generate a planet around a game object that has a mesh renderer and does not have a meshfilter
 
@@ -31,6 +32,8 @@ public class DeformController : MonoBehaviour {
 			//DeformIco deform = GameObject.FindWithTag("Global").GetComponent<DeformIco>();
 			DeformIco.deform(gameObject, roughness);
 		}
+		//gameObject.transform.localScale *= (float)(1f/Math.Pow(recursionLevel, recursionLevel/5f));
+		gameObject.GetComponent<MeshFilter>().mesh.RecalculateBounds ();
 		if (mountains) {
 			DeformIco.mountains (gameObject, numMountains, mountainMaxHeight, mountainSteepness, recursionLevel*2);
 		}

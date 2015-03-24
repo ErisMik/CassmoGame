@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System;
 
 
-/** This script is present in each planet. It first creates the collision meshes.
+/** This script creates the collision meshes. It is passed by the DeformController.
  * 
  */
 public class IcoCollision {
@@ -48,6 +48,10 @@ public class IcoCollision {
 			//planet.transform.lossyScale *= 0.99f;
 			triangleObjects[i] = triangle;
 			fixCentre(triangle);
+			triangle.GetComponent<MeshFilter>().mesh.RecalculateBounds();
+			// prevent clipping with planet
+			triangle.transform.localScale *= 1.03f;
+			triangle.transform.position = Vector3.MoveTowards(triangle.transform.position, planet.GetComponent<Renderer>().bounds.center, -0.001f * planet.GetComponent<Renderer>().bounds.extents.magnitude);
 		}
 		return triangleObjects;
 
@@ -65,7 +69,6 @@ public class IcoCollision {
 	}
 
 	void fixCentre (GameObject triangle) {
-				triangle.transform.localScale *= 1.01f;
 				Mesh mesh = triangle.GetComponent<MeshFilter>().mesh;
 				Vector3[] verts = mesh.vertices;
 				Vector3 middleAB = (verts [0] - verts [1]) * 0.5f + verts [1];
