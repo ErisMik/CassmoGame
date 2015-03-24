@@ -27,7 +27,8 @@ public class UniversalGravity : MonoBehaviour {
 	public double G; // gravity coefficient
 	public float R; // drag coefficient
 	public float A; // angular drag coefficient
-	public float updateInterval;
+	public float updateInterval = 1;
+	public float bodyDetectDistance = 4; // the distance, in fractions of the radius, at which a rigidbody is made known to a planet's instancer
 
 	//private List<GameObject> rigidbodies = new List<GameObject>();
 	private GameObject[] rigidbodies = new GameObject[0];
@@ -46,8 +47,21 @@ public class UniversalGravity : MonoBehaviour {
 			if (source.tag == "CelestialObject") {
 				ObjectProperties objprop = source.GetComponent(typeof(ObjectProperties)) as ObjectProperties;
 				double density = objprop.density;
-				double mass = (3.1415926/6f) * density * source.GetComponent<Collider>().bounds.size.x * source.GetComponent<Collider>().bounds.size.z * source.GetComponent<Collider>().bounds.size.y;
+				double mass = (3.1415926/6f) * density * source.GetComponent<Renderer>().bounds.size.x * source.GetComponent<Renderer>().bounds.size.z * source.GetComponent<Renderer>().bounds.size.y;
 				source.GetComponent<Rigidbody>().mass = (float)mass;
+
+				// give list of nearby rigidbodies to all planets
+				Renderer renderer = source.GetComponent<Renderer>();
+				List<GameObject> nearBodies = new List<GameObject>();
+				foreach (GameObject body in rigidbodies) {
+					if (Vector3.Distance (body.transform.position, source.transform.position) < renderer.bounds.extents.magnitude * bodyDetectDistance) {
+						nearBodies.Add (body);
+					}
+				}
+				IcoTriangleInstancer instancer = source.GetComponent<IcoTriangleInstancer>();
+				if (instancer != null) {
+					instancer.updateBodies(nearBodies.ToArray ());
+				}
 			}
 		}
 	}

@@ -7,6 +7,7 @@ using System;
 static class DeformIco {
 
 	public static void deform(GameObject sphere, float dist_limit_fraction) {
+		Transform transform = sphere.GetComponent<Transform>();
 		Vector3[] tempVerts = sphere.GetComponent<MeshFilter>().mesh.vertices;
 		//Random rnd = new Random();
 		Vector3 centre = sphere.GetComponent<Renderer>().bounds.center;
@@ -20,6 +21,7 @@ static class DeformIco {
 			tempVerts[i] = Vector3.MoveTowards(tempVerts[i], centre, distDiff);
 		}
 		sphere.GetComponent<MeshFilter>().mesh.vertices = tempVerts;
+		transform.localScale = new Vector3 (1, 1, 1);
 	}
 
 	/** returns index position of the verts in the verts list
@@ -132,6 +134,7 @@ static class DeformIco {
 	 @return mountain peaks
 	 */
 	public static void mountains(GameObject planet, int num, float maxHeight, float steepness, int numSmoothIterations) {
+		Transform transform = planet.GetComponent<Transform>();
 		Mesh mesh = planet.GetComponent<MeshFilter> ().mesh;
 		Vector3[] verts = planet.GetComponent<MeshFilter> ().mesh.vertices;
 		List<Vector3> tempVerts = planet.GetComponent<MeshFilter> ().mesh.vertices.ToList();
@@ -145,6 +148,8 @@ static class DeformIco {
 				tempVerts = smoothElevationFast(steepness, numSmoothIterations, tempVerts, vertNum, centre);
 		}
 		mesh.vertices = tempVerts.ToArray ();
+		//transform.localScale = new Vector3 (1, 1, 1);
+		//mesh.RecalculateBounds ();
 	}
 
 

@@ -17,8 +17,11 @@ public class DeformController : MonoBehaviour {
 	public bool collision;
 	public Material material;
 
+	private GameObject[] trianglePlanes;
+
 	// Use this for initialization
 	void Start () {
+
 
 
 		if (create) {
@@ -29,16 +32,17 @@ public class DeformController : MonoBehaviour {
 			DeformIco.deform(gameObject, roughness);
 		}
 		if (mountains) {
-				DeformIco.mountains (gameObject, numMountains, mountainMaxHeight, mountainSteepness, recursionLevel*2);
+			DeformIco.mountains (gameObject, numMountains, mountainMaxHeight, mountainSteepness, recursionLevel*2);
 		}
 		if (colour) {
 			PlanetDecorator.colour(gameObject);
 		}
 		if (collision) {
 			IcoCollision icoCollision = new IcoCollision (gameObject);
-			icoCollision.createPlanes (material);
+			trianglePlanes = icoCollision.createPlanes (material);
+			IcoTriangleInstancer icoTriangleInstancer = gameObject.GetComponent<IcoTriangleInstancer>();
+			icoTriangleInstancer.setProperties(trianglePlanes, 0F, 0F);
 		}
-		
-	
+		gameObject.GetComponent<MeshFilter>().mesh.RecalculateBounds ();
 	}
 }
