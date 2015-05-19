@@ -9,7 +9,11 @@ public class playCantrol : MonoBehaviour {
 	public Rigidbody rb;
 	public float distToGround;
 
+	public GameObject camera;
+
 	bool jump;
+	float MoveRotateX;
+	float MoveRotateY;
 		
 	void Start() {
 		rb = GetComponent<Rigidbody>();
@@ -18,13 +22,13 @@ public class playCantrol : MonoBehaviour {
 		
 	void Update () {
 		//Lock the cursor
-		if(Input.GetKey(KeyCode.Escape)){
-			Cursor.lockState = CursorLockMode.None;
-			Cursor.visible = true;
-		}
-		else{
+		if(Input.GetKey(KeyCode.Mouse0) || Input.GetKey(KeyCode.Mouse1)){
 			Cursor.lockState = CursorLockMode.Locked;
 			Cursor.visible = false;
+		}
+		else{
+			Cursor.lockState = CursorLockMode.None;
+			Cursor.visible = true;
 		}
 
 		//Check to see if character is touching the ground
@@ -33,12 +37,20 @@ public class playCantrol : MonoBehaviour {
 		// Amount to Move
 		float MoveForward = Input.GetAxis("Vertical")*MoveSpeed*Time.deltaTime;
 		float MoveLeft = Input.GetAxis("Horizontal")*MoveSpeed*Time.deltaTime;
-		float MoveRotate = Input.GetAxis ("Mouse X") * RotateSpeed * Time.deltaTime;
+		MoveRotateX = Input.GetAxis ("Mouse X") * RotateSpeed * Time.deltaTime;
+		MoveRotateY = Input.GetAxis ("Mouse Y") * RotateSpeed * Time.deltaTime;
 
 		// Move the player
 		Vector3 MoveAmnt = new Vector3(MoveLeft, 0, MoveForward);
 		transform.Translate(MoveAmnt);
-		transform.Rotate(Vector3.up * MoveRotate);
+
+		//If mouse key held down, rotate
+		if (Input.GetKey (KeyCode.Mouse1)) {
+			transform.Rotate (Vector3.up * MoveRotateX);
+		} else if (Input.GetKey (KeyCode.Mouse0)) {
+			camera.transform.Rotate (Vector3.up * MoveRotateX, Space.Self);
+			camera.transform.Rotate (Vector3.left * MoveRotateY, Space.Self);
+		}
 
 		//Check for jump
 		if(Input.GetKeyDown(KeyCode.Space) && grounded){
