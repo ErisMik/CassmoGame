@@ -17,7 +17,6 @@ public class IcoTriangleInstancer : MonoBehaviour {
 			updateInterval = updateInterval_;
 		if (enableDistance_ != 0F)
 			enableDistance = enableDistance_;
-
 	}
 
 	public void updateBodies (GameObject[] bodies) {
@@ -33,7 +32,7 @@ public class IcoTriangleInstancer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void updateTriangles () {
-		if (nearbyBodies == null || planes == null)
+		if (nearbyBodies == null || planes == null) // remove the nearbybodies check; at the moment, if nothing is nearby, the whole planet will load
 						return;
 		foreach (GameObject plane in planes) {
 				bool shouldBeEnabled = false;

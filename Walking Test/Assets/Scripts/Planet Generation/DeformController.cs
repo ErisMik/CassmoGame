@@ -9,11 +9,11 @@ public class DeformController : MonoBehaviour {
 	public bool create;
 	public int recursionLevel;
 	public bool deform;
-	public float roughness;
+	public float roughness; // 0 to 1
 	public bool mountains;
 	public int numMountains;
 	public float mountainMaxHeight; // fraction of radius
-	public float mountainSteepness; // cos of angle
+	public float mountainSteepness; // cos of angle in radians
 	public bool colour;
 	public bool collision;
 	public Material material;
