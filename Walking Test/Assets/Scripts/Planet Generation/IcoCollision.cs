@@ -10,15 +10,17 @@ using System;
 public class IcoCollision {
 
 	public GameObject planet;
+	public Boolean align; // whether to align the vertices of neighbouring triangles
 
-	public IcoCollision (GameObject planet_) {
+	public IcoCollision (GameObject planet_, Boolean align) {
 		planet = planet_;
+		this.align = align;
 	}
 
-	// Use this for initialization
+
 	public GameObject[] createPlanes (Material material) {
 		Transform planetTransform = planet.GetComponent<Transform>();
-		Vector3 scale = planetTransform.localScale;
+		///Vector3 scale = planetTransform.localScale;
 		List<Triangle> triangles = new List<Triangle>();
 		Mesh planetMesh = planet.GetComponent<MeshFilter>().mesh;
 		for (int i = 0; i < planetMesh.triangles.Length; i += 3)
@@ -28,6 +30,8 @@ public class IcoCollision {
 			Vector3 p3 = planetMesh.vertices[planetMesh.triangles[i + 2]];
 			triangles.Add (new Triangle(p1, p2, p3));
 		}
+
+		// create each triangle object
 		GameObject[] triangleObjects = new GameObject[triangles.Count];
 		for (int i = 0; i < triangles.Count; i++) {
 			Mesh mesh = new Mesh ();
@@ -46,7 +50,7 @@ public class IcoCollision {
 			meshFilter.mesh = mesh;
 			meshRenderer.material = material;
 			//triangle.transform.localScale = scale*1.001F;
-			triangle.transform.parent = planet.transform;
+
 			//planet.transform.lossyScale *= 0.99f;
 			triangleObjects[i] = triangle;
 			fixCentre(triangle);
@@ -57,11 +61,21 @@ public class IcoCollision {
 			//BoxCollider meshCollider = triangle.AddComponent<BoxCollider>();
 			meshCollider.convex = true;
 
-			// prevent clipping with planet
-			triangle.transform.localScale *= 1.03f;
-			float moveOutAmount = -0.01f; // the amount to move the triangle away from the planet, as a fraction of the radius; should be negative
-			triangle.transform.position = Vector3.MoveTowards(triangle.transform.position, planet.GetComponent<Renderer>().bounds.center, moveOutAmount * planet.GetComponent<Renderer>().bounds.extents.magnitude);
+			// prevent clipping with planet; scale each triangle and move it out
+			///triangle.transform.localScale *= 1.03f;
+			///float moveOutAmount = -0.01f; // the amount to move the triangle away from the planet, as a fraction of the radius; should be negative
+			///triangle.transform.position = Vector3.MoveTowards(triangle.transform.position, planet.GetComponent<Renderer>().bounds.center, moveOutAmount * planet.GetComponent<Renderer>().bounds.extents.magnitude);
 		}
+
+		// prevent clipping with planet by scaling down the planet
+		float scaleAmount = 0.02f; // in fractions of the radius
+		planetTransform.localScale -= new Vector3 (scaleAmount, scaleAmount, scaleAmount);
+
+		// parent the triangles to the planet
+		foreach (GameObject triangle in triangleObjects) {
+			triangle.transform.parent = planet.transform;
+		}
+
 		return triangleObjects;
 
 	}

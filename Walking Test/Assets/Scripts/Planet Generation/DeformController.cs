@@ -13,10 +13,11 @@ public class DeformController : MonoBehaviour {
 	public bool mountains;
 	public int numMountains;
 	public float mountainMaxHeight; // fraction of radius
-	public float mountainSteepness; // cos of angle in radians
+	public float mountainSteepness; // cos of angle; 0 to 1, 0 being maximum steepness, 1 being flat
 	public bool colour;
-	public bool collision;
-	public Material material;
+	public bool collision; // whether to create the surface collision triangles
+	public bool alignTriangles; // whether to align the vertices of neighbouring surface collision triangles
+	public Material material; // material to give the surface collision triangles
 
 	private GameObject[] trianglePlanes;
 
@@ -41,7 +42,7 @@ public class DeformController : MonoBehaviour {
 			PlanetDecorator.colour(gameObject);
 		}
 		if (collision) {
-			IcoCollision icoCollision = new IcoCollision (gameObject);
+			IcoCollision icoCollision = new IcoCollision (gameObject, alignTriangles);
 			trianglePlanes = icoCollision.createPlanes (material);
 			IcoTriangleInstancer icoTriangleInstancer = gameObject.GetComponent<IcoTriangleInstancer>();
 			icoTriangleInstancer.setProperties(trianglePlanes, 0F, 0F);
